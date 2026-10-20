@@ -1,8 +1,8 @@
 # Bright-integrated-web-scraper
 Open source web scraper powered by [Bright Data Web Unlocker](https://docs.brightdata.com/scraping-automation/web-unlocker/introduction), in two flavours with an identical CLI:
 
-- **`python/`**: asyncio + aiohttp + BeautifulSoup
-- **`rust/`**: tokio + reqwest + scraper
+- **python/**: asyncio + aiohttp + BeautifulSoup
+- **rust/**: tokio + reqwest + scraper
 
 Features: CSS-selector extraction, repeating-item records, next-link pagination, concurrent fetching with a semaphore, retries with exponential backoff, geo-targeting, and JSON / JSONL / CSV output.
 
@@ -41,17 +41,17 @@ brightscrape -i urls.txt -s "title=h1" -c 20 --country de -o out.jsonl
 
 | Flag | Meaning |
 |------|---------|
-| `-s NAME=CSS[@ATTR]` | Field to extract (repeatable). `href`/`src` attributes become absolute URLs. |
-| `--item CSS` | Repeating element; emits one record per match. |
-| `--next CSS` / `--max-pages N` | Follow a next-page link up to N pages per start URL. |
-| `-i FILE` | Read URLs from a file, one per line (`#` comments allowed). |
-| `-c N` / `-r N` / `--timeout S` | Concurrency, retry attempts, per-request timeout. |
-| `--format raw\|markdown` | Ask Web Unlocker for raw HTML or markdown. |
-| `--country CC` | Geo-target the request. |
-| `--direct` | Bypass Bright Data and fetch directly (handy for local testing). |
-| `-o FILE` | `.json`, `.jsonl` or `.csv`; JSON to stdout if omitted. |
+| -s NAME=CSS[@ATTR] | Field to extract (repeatable). href/src attributes become absolute URLs. |
+| --item CSS | Repeating element; emits one record per match. |
+| --next CSS / --max-pages N | Follow a next-page link up to N pages per start URL. |
+| -i FILE | Read URLs from a file, one per line (# comments allowed). |
+| -c N / -r N / --timeout S | Concurrency, retry attempts, per-request timeout. |
+| --format raw\|markdown | Ask Web Unlocker for raw HTML or markdown. |
+| --country CC | Geo-target the request. |
+| --direct | Bypass Bright Data and fetch directly (handy for local testing). |
+| -o FILE | .json, .jsonl or .csv; JSON to stdout if omitted. |
 
-Set `BRIGHTDATA_API_URL` to point at a different endpoint (used by the tests).
+Set BRIGHTDATA_API_URL to point at a different endpoint (used by the tests).
 
 ## Tests
 
