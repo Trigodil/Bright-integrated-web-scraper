@@ -1,0 +1,19 @@
+[package]
+name = "brightscrape"
+version = "0.1.0"
+edition = "2021"
+description = "Open source web scraper powered by Bright Data Web Unlocker"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+csv = "1"
+futures = "0.3"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+scraper = "0.20"
+serde_json = { version = "1", features = ["preserve_order"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "sync", "time"] }
+url = "2"
+
+[dev-dependencies]
+tokio = { version = "1", features = ["full"] }
